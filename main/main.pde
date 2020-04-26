@@ -28,7 +28,8 @@ void draw() {
         color[] currentColors = {c1, c2, c3};
         fill(color(background, 20));
         rect(0, 0, width, height);
-        drawBlock(random(width), random(height), exp(random(2) + 4), seedAngle, currentColors);
+        float scaleFactor = height / 1080;
+        drawBlock(random(width), random(height), exp(random(2) + 4) * scaleFactor, seedAngle, currentColors);
     }
     save("output.png");
     exit();
@@ -37,7 +38,7 @@ void draw() {
 void drawBlock(float x, float y, float size, float angle, color[] colors) {
     color bg = colors[0];
     fill(bg);
-    for (int i = 0; i < 2000; i++) {
+    for (int i = 0; i < max(width, height); i++) {
         ellipse(x + cos(angle)*i, y + sin(angle)*i, size, size);
     }
 }
