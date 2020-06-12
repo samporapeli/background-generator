@@ -1,5 +1,5 @@
 void setup() {
-    fullScreen();
+    size(1920, 1080);
     background(#272822);
     noStroke();
     noLoop();
@@ -33,7 +33,7 @@ void draw() {
         drawBlock(random(width), random(height), exp(random(2) + 4) * scaleFactor, seedAngle, currentColors);
     }
     save("output.png");
-    exit();
+    //    exit();
 }
 
 void drawBlock(float x, float y, float size, float angle, color[] colors) {
