@@ -10,7 +10,6 @@ void draw() {
     // Monokai color scheme
     color foreground = #f8f8f2;
     color background = #272822;
-    background = foreground;
     color black = #272822;
     color red = #f92672;
     color green = #a6e22e;
