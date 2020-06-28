@@ -1,6 +1,8 @@
 const state = {
     width: 1920,
     height: 1080,
+    next: true,
+    blockAmount: 6,
     background: "#272822",
     colors: [
         {
@@ -19,4 +21,8 @@ const state = {
     scheme: [1, 1, 0],
     seedAngle: Math.PI,
     angleIncrement: Math.PI / 32
+}
+
+function next() {
+    state.next = true;
 }
