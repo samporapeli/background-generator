@@ -1,8 +1,5 @@
 function setup() {
-    createCanvas(state.width, state.height);
-    background(color(state.background));
     noStroke();
-    noCursor();
     frameRate(1);
 }
 
@@ -10,6 +7,7 @@ function draw() {
     while (state.next) {
         state.next = false;
         const background_color = color(state.background);
+        createCanvas(state.width, state.height);
         background(background_color)
         var scheme = state.colors;
         scheme = scheme.filter(c => c.active);
