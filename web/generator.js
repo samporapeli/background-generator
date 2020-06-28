@@ -1,27 +1,19 @@
 function setup() {
-    createCanvas(1920, 1080);
-    background(color("#272822"));
+    createCanvas(state.width, state.height);
+    background(color(state.background));
     noStroke();
     noLoop();
     noCursor();
 }
 
 function draw() {
-    // Monokai color scheme
-    var foreground = color("#f8f8f2");
-    var background = color("#272822");
-    var black = color("#272822");
-    var red = color("#f92672");
-    var green = color("#a6e22e");
-    var yellow = color("#f4bf75");
-    var blue = color("#66d9ef");
-    var magenta = color("#ae81ff");
-    var cyan = color("#a1efe4");
-    var white = color("#f8f8f2");
-    var scheme = [red, green, blue, magenta, white, cyan, yellow];
-    var seedAngle = random(2*PI);
+    var background = color(state.background);
+    var scheme = state.colors;
+    scheme = scheme.filter(c => c.active);
+    scheme = scheme.map(c => color(c.value));
+    var seedAngle = state.seedAngle;
     for (let i = 0; i <= 7; i++) { 
-        seedAngle += PI/32;
+        seedAngle += state.angleIncrement;
         const c1 = selectColor(scheme);
         const c2 = selectColor(scheme);
         const c3 = selectColor(scheme);
