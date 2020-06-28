@@ -1,4 +1,4 @@
-var state = {
+const state = {
     width: 1920,
     height: 1080,
     background: "#272822",

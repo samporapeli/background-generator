@@ -7,7 +7,7 @@ function setup() {
 }
 
 function draw() {
-    var background = color(state.background);
+    const background = color(state.background);
     var scheme = state.colors;
     scheme = scheme.filter(c => c.active);
     scheme = scheme.map(c => color(c.value));
@@ -24,8 +24,6 @@ function draw() {
         const scaleFactor = height / 1080;
         drawBlock(random(width), random(height), exp(random(2) + 4) * scaleFactor, seedAngle, currentColors);
     }
-     //save("output.png");
-    //    exit();
 }
 
 function drawBlock(x, y, size, angle, colors) {
