@@ -14,6 +14,11 @@
             <h1>Background generator</h1>
         </main>
         <div id="interface">
+            <div v-for="color in state.colors" class="ui input">
+                <input type="checkbox" v-model="color.active" :checked="color.active"></input>
+                <input type="text" v-model="color.value" :value="color.value"></input>
+                <br>
+            </div>
             <button onclick="next()" class="ui button">Update</button>
             <button onclick="save('background.png')" class="ui button">Download</button>
         </div>
