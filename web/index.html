@@ -3,11 +3,20 @@
     <head>
         <meta charset="utf-8">
         <title>Background generator</title>
+        <link rel="stylesheet" href="../Semantic-UI-CSS/semantic.min.css">
         <script src="https://cdn.jsdelivr.net/npm/p5@1.0.0/lib/p5.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+        <script src="state.js"></script>
         <script src="generator.js"></script>
     </head>
     <body>
         <main>
+            <h1>Background generator</h1>
         </main>
+        <div id="interface">
+            <button onclick="next()" class="ui button">Update</button>
+            <button onclick="save('background.png')" class="ui button">Download</button>
+        </div>
+        <script src="interface.js"></script>
     </body>
 </html>
