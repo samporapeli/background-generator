@@ -21,6 +21,11 @@
                 <input type="text" v-model="color.value" :value="color.value"></input>
                 <br>
             </div>
+            <h3>Blocks</h3>
+            <label>Amount
+            <input type="number" v-model="state.blockAmount" min=0 max=1000></input>
+            </label>
+            <label>
             <h3>Size</h3>
             <label>Width
             <input type="number" v-model="state.width"></input>
