@@ -13,9 +13,9 @@ function draw() {
         var scheme = state.colors;
         scheme = scheme.filter(c => c.active);
         scheme = scheme.map(c => color(c.value));
-        var seedAngle = state.seedAngle;
+        var seedAngle = float(state.seedAngle);
         for (let i = 0; i < state.blockAmount; i++) { 
-            seedAngle += state.angleIncrement;
+            seedAngle += float(state.angleIncrement);
             const c1 = selectColor(scheme);
             const c2 = selectColor(scheme);
             const c3 = selectColor(scheme);
