@@ -4,9 +4,9 @@ function setup() {
 }
 
 function draw() {
-    while (state.next) {
+    if (state.next) {
         randomSeed(state.randSeed);
-        state.next = false;
+        state.next = state.autonext;
         const background_color = color(state.background);
         createCanvas(state.width, state.height);
         background(background_color)
@@ -29,7 +29,6 @@ function draw() {
             drawBlock(random(width), random(height), exp(float(state.largeness) + variation) * scaleFactor, seedAngle, currentColors);
         }
     }
-    state.next = false;
 }
 
 function drawBlock(x, y, size, angle, colors) {

@@ -3,6 +3,7 @@ const state = {
     width: 1920,
     height: 1080,
     next: true,
+    autonext: false,
     blockAmount: 6,
     largeness: 5,
     sizeVariation: 0.8,
