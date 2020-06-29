@@ -4,8 +4,8 @@ const state = {
     height: 1080,
     next: true,
     blockAmount: 6,
-    largeness: 4,
-    sizeVariation: 2,
+    largeness: 5,
+    sizeVariation: 0.8,
     background: "#272822",
     colors: [
         {
