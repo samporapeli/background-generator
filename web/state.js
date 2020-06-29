@@ -18,7 +18,7 @@ const state = {
             active: true
         },
         {
-            value: "F8F8F2",
+            value: "#F8F8F2",
             active: false
         }
     ],
