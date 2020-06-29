@@ -23,7 +23,15 @@
             </div>
             <h3>Blocks</h3>
             <label>Amount
-            <input type="number" v-model="state.blockAmount" min=0 max=1000></input>
+                <input type="number" v-model="state.blockAmount" min="0" max="50"></input>
+            </label>
+            <label>Largeness
+                <span>{{ state.largeness }}</span>
+                <input type="range" v-model="state.largeness" min="1" max="7" step="0.1"></input>
+            </label>
+            <label>Size variation
+                <span>{{ state.sizeVariation }}</span>
+                <input type="range" v-model="state.sizeVariation" min="0" max="4" step="0.1"></input>
             </label>
             <label>
             <h3>Size</h3>

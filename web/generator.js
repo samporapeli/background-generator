@@ -24,7 +24,9 @@ function draw() {
             fill(color(39, 40, 34, 40)); 
             rect(0, 0, width, height);
             const scaleFactor = height / 1080;
-            drawBlock(random(width), random(height), exp(random(2) + 4) * scaleFactor, seedAngle, currentColors);
+            var variation = float(state.sizeVariation)
+            variation = random(-variation, variation)
+            drawBlock(random(width), random(height), exp(float(state.largeness) + variation) * scaleFactor, seedAngle, currentColors);
         }
     }
     state.next = false;
