@@ -1,0 +1,3 @@
+[submodule "web/Semantic-UI-CSS"]
+	path = web/Semantic-UI-CSS
+	url = git@github.com:Semantic-Org/Semantic-UI-CSS.git
