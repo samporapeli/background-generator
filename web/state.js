@@ -9,18 +9,11 @@ const state = {
     sizeVariation: 0.8,
     background: "#272822",
     colors: [
-        {
-            value: "#AE81FF",
-            active: true
-        },
-        {
-            value: "#A1EFE4",
-            active: true
-        },
-        {
-            value: "#F8F8F2",
-            active: false
-        }
+        { value: "#AE81FF", active: true },
+        { value: "#A1EFE4", active: true },
+        { value: "#FA2772", active: true },
+        { value: "#A7E22E", active: true },
+        { value: "#F8F8F2", active: false }
     ],
     scheme: [1, 1, 0],
     seedAngle: Math.PI,
