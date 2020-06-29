@@ -5,6 +5,7 @@ function setup() {
 
 function draw() {
     while (state.next) {
+        randomSeed(state.randSeed);
         state.next = false;
         const background_color = color(state.background);
         createCanvas(state.width, state.height);

@@ -1,3 +1,4 @@
+const seed = + new Date()   // Timestamp as seed
 const state = {
     width: 1920,
     height: 1080,
@@ -20,7 +21,8 @@ const state = {
     ],
     scheme: [1, 1, 0],
     seedAngle: Math.PI,
-    angleIncrement: Math.PI / 32
+    angleIncrement: Math.PI / 32,
+    randSeed: seed
 }
 
 function next() {
