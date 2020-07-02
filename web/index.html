@@ -19,7 +19,7 @@
         <main>
             <h1>Background generator</h1>
         </main>
-        <div id="interface">
+        <div id="interface" @change="state.next = true;">
             <h3>Colors</h3>
             <select v-model="state.selectedPalette" id="palette-selector" class="ui dropdown" @change="changePalette(state.selectedPalette)">
                 <option v-for="palette in state.palettes" :value="palette.id">{{ palette.name }}</option>
@@ -43,7 +43,7 @@
                 <input type="range" v-model="state.sizeVariation" min="0" max="4" step="0.1"></input>
             </label>
             <h3>Location</h3>
-            <button class="ui button" onclick="state.randSeed = + new Date()">Randomize alignment</button>
+            <button class="ui button" onclick="state.randSeed = + new Date(); state.next = true;">Randomize alignment</button>
             <label>Start angle
                 <input type="range" v-model="state.seedAngle" min="0" max="7" step="0.1"></input>
             </label>
@@ -57,10 +57,7 @@
             <label>Height
             <input type="number" v-model="state.height"></input>
             </label>
-            <button onclick="next()" class="ui button">Update</button>
             <button onclick="save('background.png')" class="ui button">Download</button>
-            <span>Update automatically</span>
-            <button onclick="state.next = true; state.autonext = !state.autonext;" class="ui button">{{ state.autonext ? "Stop" : "Start" }}</button>
         </div>
         <script src="interface.js"></script>
     </body>
