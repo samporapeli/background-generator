@@ -39,7 +39,7 @@ const state = {
             "id": "orange",
             "name": "Orange",
             "author": "",
-            "color": ["#f49102", "#ffcc80u", "#e6e6e6"],
+            "color": ["#f49102", "#ffcc80", "#e6e6e6"],
             "foreground": "#f1ebeb",
             "background": "#272822"
         }
