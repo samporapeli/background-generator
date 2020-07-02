@@ -28,43 +28,74 @@
                 <select v-model="state.selectedPalette" id="palette-selector" class="ui dropdown" @change="changePalette(state.selectedPalette)">
                     <option v-for="palette in state.palettes" :value="palette.id">{{ palette.name }}</option>
                 </select>
-                <div v-for="color in state.colors" class="ui input">
-                    <input type="checkbox" v-model="color[1]"></input>
-                    <span style="width: 1.5rem; height: 1.5rem; margin: auto 0.4rem;" v-bind:style="{'background-color': color}"></span>
-                    <input type="text" v-model="color[0]"></input>
-                    <br>
+                <div class="ui grid">
+                    <div class="doubling four column row">
+                        <div v-for="color in state.colors" class="column">
+                            <div class="ui input">
+                                <input type="checkbox" v-model="color[1]"></input>
+                                <span class="color-indicator" v-bind:style="{'background-color': color}"></span>
+                                <input type="text" v-model="color[0]"></input>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <h3>Blocks</h3>
-                <label>Amount
-                    <input type="number" v-model="state.blockAmount" min="0" max="50"></input>
-                </label>
-                <label>Largeness
-                    <span>{{ state.largeness }}</span>
-                    <input type="range" v-model="state.largeness" min="1" max="7" step="0.1"></input>
-                </label>
-                <label>Size variation
-                    <span>{{ state.sizeVariation }}</span>
-                    <input type="range" v-model="state.sizeVariation" min="0" max="4" step="0.1"></input>
-                </label>
+                <div class="ui grid">
+                    <div class="doubling one column row">
+                        <div class="column">
+                            <label>Amount
+                                <input type="number" v-model="state.blockAmount" min="0" max="50"></input>
+                            </label>
+                        </div>
+                        <div class="column">
+                            <label>Largeness
+                                <span>{{ state.largeness }}</span>
+                                <input type="range" v-model="state.largeness" min="1" max="7" step="0.1"></input>
+                            </label>
+                        </div>
+                        <div class="column">
+                            <label>Size variation
+                                <span>{{ state.sizeVariation }}</span>
+                                <input type="range" v-model="state.sizeVariation" min="0" max="4" step="0.1"></input>
+                            </label>
+                        </div>
+                    </div>
+                </div>
                 <h3>Location</h3>
-                <button class="ui button" onclick="state.randSeed = + new Date(); state.next = true;">Randomize alignment</button>
-                <label>Start angle
-                    <input type="range" v-model="state.seedAngle" min="0" max="7" step="0.1"></input>
-                </label>
-                <label>Angle increasement between blocks
-                    <input type="range" v-model="state.angleIncrement" min="0" max="2" step="0.01"></input>
-                </label>
+                <div class="ui grid">
+                    <div class="doubling one column row">
+                        <div class="column">
+                            <button class="ui button" onclick="state.randSeed = + new Date(); state.next = true;">Randomize alignment</button>
+                        </div>
+                        <div class="column">
+                            <label>Start angle
+                                <input type="range" v-model="state.seedAngle" min="0" max="7" step="0.1"></input>
+                            </label>
+                        </div>
+                        <div class="column">
+                            <label>Angle increasement between blocks
+                                <input type="range" v-model="state.angleIncrement" min="0" max="2" step="0.01"></input>
+                            </label>
+                        </div>
+                    </div>
+                </div>
                 <h3>Size</h3>
-                <label>Width
-                <input type="number" v-model="state.width"></input>
-                </label>
-                <label>Height
-                <input type="number" v-model="state.height"></input>
-                </label>
-            </div>
+                <div class="ui grid">
+                    <div class="doubling one column row">
+                        <div class="column">
+                            <label>Width
+                            <input type="number" v-model="state.width"></input>
+                            </label>
+                        </div>
+                        <div class="column">
+                            <label>Height
+                            <input type="number" v-model="state.height"></input>
+                            </label>
+                        </div>
+                    </div>
             <div id="generator-container"></div>
         </main>
-        <footer class="ui vertical footer segment"><a class="item" href="https://samporapeli.fi">Sampo Rapeli</a> 2020</footer>
+        <footer class="ui vertical footer segment"><a class="item" href="https://samporapeli.fi" target="_blank">Sampo Rapeli</a> 2020</footer>
         <script src="interface.js"></script>
     </body>
 </html>
