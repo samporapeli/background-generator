@@ -46,7 +46,32 @@ const state = {
             "color": ["#f49102", "#ffcc80", "#e6e6e6"],
             "foreground": "#f1ebeb",
             "background": "#272822"
-        }
+        },
+        kasugano: {
+          "id": "kasugano",
+          "name": "Kasugano",
+          "author": "Kori Ayakashi",
+          "color": [
+            "#3d3d3d",
+            "#6673bf",
+            "#3ea290",
+            "#b0ead9",
+            "#31658c",
+            "#596196",
+            "#8292b2",
+            "#c8cacc",
+            "#4d4d4d",
+            "#899aff",
+            "#52ad91",
+            "#98c9bb",
+            "#477ab3",
+            "#7882bf",
+            "#95a7cc",
+            "#edeff2"
+          ],
+          "foreground": "#ffffff",
+          "background": "#1b1b1b"
+        } 
     },
     selectedPalette: "monokai",
     resolutions: resolutions, 
