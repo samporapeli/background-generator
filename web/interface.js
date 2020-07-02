@@ -4,3 +4,5 @@ const app = new Vue({
         state: state
     }
 });
+
+$("#palette-selector").dropdown();
