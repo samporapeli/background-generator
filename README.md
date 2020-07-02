@@ -6,5 +6,5 @@ See more generated images in the folder [generated](generated) or try the [simpl
 * p5.js
 * vue.js
 * Semantic UI
-* Some colors from [https://terminal.sexy](terminal.sexy)
+* Some colors from [terminal.sexy](https://terminal.sexy)
 * Written with vim :)
