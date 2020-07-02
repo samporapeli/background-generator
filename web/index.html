@@ -16,9 +16,12 @@
         </main>
         <div id="interface">
             <h3>Colors</h3>
+            <select v-model="state.selectedPalette" class="ui input" @change="changePalette(state.selectedPalette)">
+                <option v-for="palette in state.palettes" :value="palette.id">{{ palette.name }}</select>
+            </select>
             <div v-for="color in state.colors" class="ui input">
-                <input type="checkbox" v-model="color.active" :checked="color.active"></input>
-                <input type="text" v-model="color.value" :value="color.value"></input>
+                <input type="checkbox" v-model="color[1]"></input>
+                <input type="text" v-model="color[0]"></input>
                 <br>
             </div>
             <h3>Blocks</h3>
