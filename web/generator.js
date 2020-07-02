@@ -8,7 +8,11 @@ function draw() {
         randomSeed(state.randSeed);
         state.next = state.autonext;
         const background_color = color(state.background);
-        createCanvas(state.width, state.height);
+        const canvas = createCanvas(state.width, state.height);
+        canvas.parent("generator-container");
+        const canvasElement = document.getElementsByTagName("canvas")[0]
+        canvasElement.style.width = "";
+        canvasElement.style.height = "";
         background(background_color)
         var scheme = state.colors;
         scheme = scheme.filter(c => c[1]);
