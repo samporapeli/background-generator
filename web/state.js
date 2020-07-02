@@ -1,4 +1,8 @@
 const seed = + new Date()   // Timestamp as seed
+const resolutions = [
+    [1920, 1080],
+    [3840, 2160]
+]
 const state = {
     width: 1920,
     height: 1080,
@@ -45,6 +49,9 @@ const state = {
         }
     },
     selectedPalette: "monokai",
+    resolutions: resolutions, 
+    resolution: resolutions[0],
+    portrait: false,
     seedAngle: Math.PI,
     angleIncrement: Math.PI / 32,
     randSeed: seed
@@ -58,6 +65,17 @@ function changePalette(palette_id) {
         colors.push([current_color, true]);
     } 
     state.colors = colors;
+    return;
+}
+
+function updateResolution() {
+    if (state.portrait) {
+        state.width = state.resolution[1];
+        state.height = state.resolution[0];
+    } else {
+        state.width = state.resolution[0];
+        state.height = state.resolution[1];
+    }
     return;
 }
 

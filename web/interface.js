@@ -6,3 +6,4 @@ const app = new Vue({
 });
 
 $("#palette-selector").dropdown();
+$("#resolution-selector").dropdown();
