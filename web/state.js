@@ -58,7 +58,6 @@ function changePalette(palette_id) {
         colors.push([current_color, true]);
     } 
     state.colors = colors;
-    console.log(colors);
     return;
 }
 

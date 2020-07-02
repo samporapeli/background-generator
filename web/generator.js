@@ -11,10 +11,8 @@ function draw() {
         createCanvas(state.width, state.height);
         background(background_color)
         var scheme = state.colors;
-        console.log(scheme)
         scheme = scheme.filter(c => c[1]);
         scheme = scheme.map(c => color(c[0]));
-        console.log(scheme)
         var seedAngle = float(state.seedAngle);
         for (let i = 0; i < state.blockAmount; i++) { 
             seedAngle += float(state.angleIncrement);
