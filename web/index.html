@@ -21,6 +21,7 @@
             </select>
             <div v-for="color in state.colors" class="ui input">
                 <input type="checkbox" v-model="color[1]"></input>
+                <span style="width: 1.5rem; height: 1.5rem; margin: auto 0.4rem;" v-bind:style="{'background-color': color}"></span>
                 <input type="text" v-model="color[0]"></input>
                 <br>
             </div>
