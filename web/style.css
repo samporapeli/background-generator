@@ -9,3 +9,7 @@
     margin: auto 0.4rem;
     border-radius: 100%;
 }
+
+input[type=text] {
+    width: 7rem;
+}
