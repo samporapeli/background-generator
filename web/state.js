@@ -1,5 +1,6 @@
 const seed = + new Date()   // Timestamp as seed
 const resolutions = [
+    [800, 480],
     [1920, 1080],
     [3840, 2160]
 ]
@@ -105,6 +106,7 @@ function updateResolution() {
 }
 
 changePalette("monokai");
+updateResolution();
 
 function next() {
     state.next = true;
