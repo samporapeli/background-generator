@@ -9,7 +9,7 @@ const app = new Vue({
 const footer = new Vue({
     el: "#footer",
     data: {
-        version: "1.0.2"
+        version: "1.0.3"
     }
 });
 
