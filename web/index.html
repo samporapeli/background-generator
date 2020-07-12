@@ -39,7 +39,10 @@
                 <span class="item active">Background generator</span>
                 <a class="item" href="https://github.com/samporapeli/background-generator" target="_blank">Source on Github</a>
             </nav>
-            <main>
+            <noscript>
+                This app needs JavaScript to work. In order to use this app, use a browser that supports Javascript and enable it.
+            </noscript>
+            <main id="main">
                 <div id="interface" @change="state.next = true;">
                     <h3>Colors</h3>
                     <select v-model="state.selectedPalette" id="palette-selector" class="ui dropdown" @change="changePalette(state.selectedPalette)">

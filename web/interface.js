@@ -12,5 +12,7 @@ const footer = new Vue({
     }
 });
 
+document.getElementById("main").style.display = "block";
+
 $("#palette-selector").dropdown();
 $("#resolution-selector").dropdown();

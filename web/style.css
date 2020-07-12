@@ -20,3 +20,7 @@ input[type=text] {
     z-index: 100;
     background-color: white;
 }
+
+#main {
+    display: none;
+}
