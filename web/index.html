@@ -44,9 +44,10 @@
                     <div class="ui grid">
                         <div class="doubling one column row">
                             <div class="column">
-                                <label>Amount
-                                    <input type="number" v-model="state.blockAmount" min="0" max="50">
-                                </label>
+                                <div class="ui labeled input">
+                                    <label for="block-amount" class="ui label">Amount</label>
+                                    <input id="block-amount" type="number" v-model="state.blockAmount" min="0" max="50">
+                                </div>
                             </div>
                             <div class="column">
                                 <label>Largeness
@@ -82,23 +83,34 @@
                     </div>
                     <h3>Size</h3>
                     <div class="ui grid">
-                        <div class="doubling one column row">
+                        <div class="row">
                             <div class="column">
                                 <select v-model="state.resolution" id="resolution-selector" class="ui dropdown" @change="updateResolution()">
                                     <option v-for="resolution in state.resolutions" :value="resolution">{{ resolution[0] + "x" + resolution[1] }}</option>
                                 </select>
                                 <button class="ui button" @click="state.portrait = !state.portrait; updateResolution(); next();">{{ state.portrait ? "Portrait" : "Landscape" }}</button>
                             </div>
+                        </div>
+                        <div class="row">
                             <div class="column">
-                                <label>Width
-                                <input type="number" v-model="state.width">
-                                </label>
+                                <div class="ui labeled input">
+                                    <label for="reso-width" class="ui label">Width</label>
+                                    <input type="number" v-model="state.width">
+                                </div>
                             </div>
+                        </div>
+                        <div class="row">
                             <div class="column">
-                                <label>Height
-                                <input type="number" v-model="state.height">
-                                </label>
+                                <div class="ui labeled input">
+                                    <label for="reso-height" class="ui label">Height</label>
+                                    <input type="number" v-model="state.height">
+                                </div>
                             </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="column">
+                            &nbsp;
                         </div>
                     </div>
                 </div>
