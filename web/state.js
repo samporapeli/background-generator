@@ -76,7 +76,7 @@ const state = {
     },
     selectedPalette: "monokai",
     resolutions: resolutions, 
-    resolution: resolutions[0],
+    resolution: resolutions[1],
     portrait: false,
     seedAngle: Math.PI,
     angleIncrement: Math.PI / 32,
