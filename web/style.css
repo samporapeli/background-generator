@@ -13,3 +13,10 @@
 input[type=text] {
     width: 7rem;
 }
+
+#nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: white;
+}
