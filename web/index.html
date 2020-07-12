@@ -32,11 +32,11 @@
                     </select>
                     <div class="ui grid">
                         <div class="doubling four column row">
-                            <div v-for="color in state.colors" class="column">
+                            <div v-for="(current_color, i) in state.colors" class="column">
                                 <div class="ui input">
-                                    <input type="checkbox" v-model="color[1]">
-                                    <span class="color-indicator" v-bind:style="{'background-color': color}"></span>
-                                    <input type="text" v-model="color[0]">
+                                    <input type="checkbox" v-model="state.colors[i].active">
+                                    <span class="color-indicator" v-bind:style="{'background-color': state.colors[i].value }"></span>
+                                    <input type="text" v-model="state.colors[i].value">
                                 </div>
                             </div>
                         </div>

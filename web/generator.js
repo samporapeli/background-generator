@@ -14,9 +14,9 @@ function draw() {
         canvasElement.style.width = "";
         canvasElement.style.height = "";
         background(background_color)
-        var scheme = state.colors;
-        scheme = scheme.filter(c => c[1]);
-        scheme = scheme.map(c => color(c[0]));
+        var scheme = Object.values(state.colors);
+        scheme = scheme.filter(c => c.active);
+        scheme = scheme.map(c => color(c.value));
         var seedAngle = float(state.seedAngle);
         for (let i = 0; i < state.blockAmount; i++) { 
             seedAngle += float(state.angleIncrement);

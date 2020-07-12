@@ -12,7 +12,7 @@ const state = {
     largeness: 5,
     sizeVariation: 0.8,
     background: "#272822",
-    colors: [],
+    colors: {},
     palettes: {
         monokai: {
           "id": "monokai",
@@ -83,11 +83,11 @@ const state = {
 }
 
 function changePalette(palette_id) {
-    colors = [];
+    colors = {};
     const palette = state.palettes[palette_id];
     for (let color_index in palette.color) {
         const current_color = palette.color[color_index];
-        colors.push([current_color, true]);
+        colors[color_index] = { active: true, value: current_color };
     } 
     state.colors = colors;
     return;
