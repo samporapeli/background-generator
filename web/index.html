@@ -132,9 +132,14 @@
                             &nbsp;
                         </div>
                     </div>
+                    <div class="ui right labeled input" id="filename-option">
+                        <span class="ui label">Filename</span>
+                        <input type="text" class="ui input" v-model="state.filename">
+                        <span class="ui basic label">.png</span>
+                    </div>
+                    <button onclick="downloadImage()" class="ui button item">Download</button>
                 </div>
                 <div id="generator-container"></div>
-                <button onclick="save('background.png')" class="ui button item">Download</button>
                 <div class="ui info message transition" id="resolution-info">
                     <i class="close icon" id="close-resolution-info"></i>
                     <div class="header">Unable to see the picture above?</div>

@@ -80,8 +80,11 @@ const state = {
     portrait: false,
     seedAngle: Math.PI,
     angleIncrement: Math.PI / 32,
-    randSeed: seed
+    randSeed: seed,
+    filename: ""
 }
+
+state.filename = "background-" + state.selectedPalette;
 
 function changePalette(palette_id) {
     colors = {};

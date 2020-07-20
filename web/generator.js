@@ -48,3 +48,6 @@ function selectColor(arr) {
     return arr[index];
 }
 
+function downloadImage() {
+    save(state.filename + ".png");
+}

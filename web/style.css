@@ -24,3 +24,8 @@ input[type=text] {
 #main {
     display: none;
 }
+
+#filename-option {
+    width: 25rem;
+    max-width: 95%;
+}
