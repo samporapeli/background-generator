@@ -108,7 +108,15 @@ function updateResolution() {
     return;
 }
 
-changePalette("monokai");
+// Load possible GET parameters to state
+const params = new URLSearchParams(window.location.search);
+for (let item in state) {
+    if (params.has(item)) {
+        state[item] = params.get(item);
+    }
+}
+
+changePalette(state.selectedPalette);
 updateResolution();
 
 function next() {
