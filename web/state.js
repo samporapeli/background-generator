@@ -1,3 +1,4 @@
+const version = "1.0.3";
 const seed = + new Date()   // Timestamp as seed
 const resolutions = [
     [800, 480],
@@ -5,6 +6,7 @@ const resolutions = [
     [3840, 2160]
 ]
 const state = {
+    version: version,
     width: 1920,
     height: 1080,
     next: true,
