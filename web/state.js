@@ -1,4 +1,4 @@
-const version = "1.0.3";
+const version = "1.0.4";
 const seed = + new Date()   // Timestamp as seed
 const resolutions = [
     [800, 480],
