@@ -83,12 +83,12 @@ const state = {
     seedAngle: Math.PI,
     angleIncrement: Math.PI / 32,
     randSeed: seed,
-    filename: ""
+    filename: "",
+    headless: false
 }
 
-state.filename = "background-" + state.selectedPalette;
-
 function changePalette(palette_id) {
+    state.filename = "background-" + state.selectedPalette;
     colors = {};
     const palette = state.palettes[palette_id];
     for (let color_index in palette.color) {
@@ -110,6 +110,8 @@ function updateResolution() {
     return;
 }
 
+updateResolution();
+
 // Load possible GET parameters to state
 const params = new URLSearchParams(window.location.search);
 for (let item in state) {
@@ -119,7 +121,6 @@ for (let item in state) {
 }
 
 changePalette(state.selectedPalette);
-updateResolution();
 
 function next() {
     state.next = true;
