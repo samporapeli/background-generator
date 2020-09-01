@@ -1,4 +1,4 @@
-const version = "1.0.4";
+const version = "1.0.5";
 const seed = + new Date()   // Timestamp as seed
 const resolutions = [
     [800, 480],
@@ -84,6 +84,7 @@ const state = {
     angleIncrement: Math.PI / 32,
     randSeed: seed,
     filename: "background",
+    automation: false,
     headless: false
 }
 
@@ -118,6 +119,8 @@ for (let item in state) {
         state[item] = params.get(item);
     }
 }
+
+["seedAngle", "largeness", "angleIncrement", "sizeVariation"].forEach(e => state[e] = Number.parseFloat(state[e]).toPrecision(4));
 
 changePalette(state.selectedPalette);
 
