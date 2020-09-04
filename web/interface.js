@@ -2,7 +2,14 @@
 const app = new Vue({
     el: "#interface",
     data: {
-        state: state
+        state: state,
+    },
+    computed: {
+        urlWithState: function() {
+            const base64State = btoa(JSON.stringify(state));
+            const baseURL = window.location.href.split('?')[0];
+            return baseURL + '?state=' + base64State;
+        }
     }
 });
 
@@ -12,6 +19,12 @@ const footer = new Vue({
         version: state.version
     }
 });
+
+function copyURL() {
+    const field = document.getElementById("url-field");
+    field.select();
+    document.execCommand("copy");
+}
 
 function isIosSafari() {
     const ua = window.navigator.userAgent;

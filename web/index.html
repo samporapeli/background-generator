@@ -139,6 +139,10 @@
                         <span class="ui basic label">.png</span>
                     </div>
                     <button onclick="downloadImage()" id="download-button" class="ui button item">Download</button>
+                    <div class="ui disabled input">
+                        <input type="text" id="url-field" v-bind:value="urlWithState">
+                    </div>
+                    <button onclick="copyURL()" class="ui button item">Copy URL</button>
                 </div>
                 <div id="generator-container"></div>
                 <div class="ui info message transition" id="resolution-info">

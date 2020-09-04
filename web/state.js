@@ -1,4 +1,4 @@
-const version = "1.0.5";
+const version = "1.0.6";
 const seed = + new Date()   // Timestamp as seed
 const resolutions = [
     [800, 480],
@@ -110,10 +110,23 @@ function updateResolution() {
     return;
 }
 
-updateResolution();
+changePalette(state.selectedPalette);
+
+// GET parameters
+const params = new URLSearchParams(window.location.search);
+
+// Load state from base64 encoded GET parameter
+const forbidden = ["version", "next", "portrait"];
+if (params.has("state")) {
+    loadedState = JSON.parse(atob(params.get("state")));
+    for (let item in loadedState) {
+        if (!forbidden.includes(item)) {
+            state[item] = loadedState[item];
+        }
+    }
+}
 
 // Load possible GET parameters to state
-const params = new URLSearchParams(window.location.search);
 for (let item in state) {
     if (params.has(item)) {
         state[item] = params.get(item);
@@ -121,8 +134,8 @@ for (let item in state) {
 }
 
 ["seedAngle", "largeness", "angleIncrement", "sizeVariation"].forEach(e => state[e] = Number.parseFloat(state[e]).toPrecision(4));
-
-changePalette(state.selectedPalette);
+state.resolution = [state.width, state.height];
+updateResolution();
 
 function next() {
     state.next = true;
