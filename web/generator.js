@@ -17,20 +17,28 @@ function draw() {
         var scheme = Object.values(state.colors);
         scheme = scheme.filter(c => c.active);
         scheme = scheme.map(c => color(c.value));
-        var seedAngle = float(state.seedAngle);
-        for (let i = 0; i < state.blockAmount; i++) { 
-            seedAngle += float(state.angleIncrement);
-            const c1 = selectColor(scheme);
-            const c2 = selectColor(scheme);
-            const c3 = selectColor(scheme);
-            const currentColors = [c1, c2, c3];
-            // Background color as rgb color as a quick hack to make transparency work
-            fill(color(39, 40, 34, 40)); 
-            rect(0, 0, width, height);
-            const scaleFactor = height / 1080;
-            var variation = float(state.sizeVariation)
-            variation = random(-variation, variation)
-            drawBlock(random(width), random(height), exp(float(state.largeness) + variation) * scaleFactor, seedAngle, currentColors);
+        if (state.scene === "Bars") {
+            var seedAngle = float(state.seedAngle);
+            for (let i = 0; i < state.blockAmount; i++) { 
+                seedAngle += float(state.angleIncrement);
+                const c1 = selectColor(scheme);
+                const c2 = selectColor(scheme);
+                const c3 = selectColor(scheme);
+                const currentColors = [c1, c2, c3];
+                // Background color as rgb color as a quick hack to make transparency work
+                fill(color(39, 40, 34, 40)); 
+                rect(0, 0, width, height);
+                const scaleFactor = height / 1080;
+                var variation = float(state.sizeVariation)
+                variation = random(-variation, variation)
+                drawBlock(random(width), random(height), exp(float(state.largeness) + variation) * scaleFactor, seedAngle, currentColors);
+            }
+        } else if (state.scene === "Graph") {
+            let graph = new Graph();
+            const selectedCol = random(scheme);
+            fill(selectedCol);
+            stroke(selectedCol);
+            graph.draw();
         }
     }
 }
