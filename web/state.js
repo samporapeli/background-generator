@@ -5,10 +5,16 @@ const resolutions = [
     [1920, 1080],
     [3840, 2160]
 ]
+const scenes = [
+    "Bars",
+    "Graph"
+]
 const state = {
     version: version,
     width: 1920,
     height: 1080,
+    scene: scenes[1],
+    scenes: scenes,
     next: true,
     autonext: false,
     blockAmount: 6,

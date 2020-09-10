@@ -40,6 +40,7 @@ document.getElementById("resolution-selector").selectedIndex = 1;
 // Create prettier dropdowns
 $("#palette-selector").dropdown();
 $("#resolution-selector").dropdown();
+$("#scene-selector").dropdown();
 
 // Handle the resolution info message box toggling
 const resolutionInfoLink = document.getElementById("resolution-info-link");
