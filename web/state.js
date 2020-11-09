@@ -1,4 +1,4 @@
-const version = "1.0.6";
+const version = "1.0.7";
 const seed = + new Date()   // Timestamp as seed
 const resolutions = [
     [800, 480],
@@ -74,7 +74,55 @@ const state = {
           ],
           "foreground": "#ffffff",
           "background": "#1b1b1b"
-        } 
+        },
+        farside: {
+          "id": "farside",
+          "name": "FarSide",
+          "author": "Baskerville",
+          "color": [
+            "#a43261",
+            "#006ca5",
+            "#007086",
+            "#6751a6",
+            "#913e88",
+            "#0061b1",
+            "#c6c6c6",
+            "#ff9fc9",
+            "#3bd6ff",
+            "#00ddf4",
+            "#d5b8ff",
+            "#ffa7f6",
+            "#93c9ff",
+            "#ffffff"
+          ],
+          "foreground": "#919191",
+          "background": "#000000"
+        },
+        ashes_light: {
+          "id": "ashes_light",
+          "name": "Ashes (light)",
+          "author": "Chris Kempson",
+          "color": [
+            "#1c2023",
+            "#c7ae95",
+            "#95c7ae",
+            "#aec795",
+            "#ae95c7",
+            "#c795ae",
+            "#95aec7",
+            "#c7ccd1",
+            "#747c84",
+            "#c7ae95",
+            "#95c7ae",
+            "#aec795",
+            "#ae95c7",
+            "#c795ae",
+            "#95aec7",
+            "#f3f4f5"
+          ],
+          "foreground": "#565e65",
+          "background": "#f3f4f5"
+        }
     },
     selectedPalette: "monokai",
     resolutions: resolutions, 
