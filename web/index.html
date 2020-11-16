@@ -88,7 +88,6 @@
                     <div class="ui grid">
                         <div class="doubling one column row">
                             <div class="column">
-                                <button class="ui button" onclick="state.randSeed = + new Date(); state.next = true;">Randomize alignment</button>
                             </div>
                             <div class="column">
                                 <label>Start angle
@@ -134,6 +133,7 @@
                             &nbsp;
                         </div>
                     </div>
+                    <h3>Download file</h3>
                     <div class="ui right labeled input" id="filename-option">
                         <span class="ui label">Filename</span>
                         <input type="text" class="ui input" v-model="state.filename">
@@ -144,6 +144,9 @@
                         <input type="text" id="url-field" v-bind:value="urlWithState">
                     </div>
                     <button onclick="copyURL()" class="ui button item" style="display: none;">Copy URL</button>
+                    <h3>Randomize</h3>
+                    <button class="ui button" onclick="changeSeed();">Change random seed</button>
+                    <button onclick="newRandomValues();" class="ui button item">Randomize values</button>
                 </div>
                 <div id="generator-container"></div>
                 <div class="ui info message transition" id="resolution-info">

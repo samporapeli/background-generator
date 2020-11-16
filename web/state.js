@@ -124,9 +124,9 @@ const state = {
           "background": "#f3f4f5"
         }
     },
-    selectedPalette: "monokai",
+    selectedPalette: "farside",
     resolutions: resolutions, 
-    resolution: resolutions[1],
+    resolution: resolutions[0],
     portrait: false,
     seedAngle: Math.PI,
     angleIncrement: Math.PI / 32,
@@ -181,7 +181,12 @@ for (let item in state) {
     }
 }
 
-["seedAngle", "largeness", "angleIncrement", "sizeVariation"].forEach(e => state[e] = Number.parseFloat(state[e]).toPrecision(4));
+function attributesToFloat() {
+    ["seedAngle", "largeness", "angleIncrement", "sizeVariation"].forEach(
+        e => state[e] = Number.parseFloat(state[e]).toPrecision(4)
+    );
+}
+
 state.resolution = [state.width, state.height];
 updateResolution();
 

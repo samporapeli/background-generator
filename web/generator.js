@@ -1,6 +1,10 @@
 function setup() {
     noStroke();
     frameRate(1);
+    // Wait that `state` is defined
+    while (typeof state === "undefined") {}
+    newRandomValues();
+    attributesToFloat();
 }
 
 function draw() {
@@ -50,4 +54,31 @@ function selectColor(arr) {
 
 function downloadImage() {
     save(state.filename + ".png");
+}
+
+function nullBeforeRandomization() {
+    state.blockAmount = null;
+    state.largeness = null;
+    state.seedAngle = null;
+    state.angleIncrement = null;
+}
+
+function randomizeNullValues() {
+    randomSeed(state.randSeed);
+    state.blockAmount = state.blockAmount === null ? int(random(2, 10)) : state.blockAmount;
+    state.largeness = state.largeness === null ? int(random(4, 6)) : state.largeness;
+    state.seedAngle = state.seedAngle === null ? random(0, 7) : state.seedAngle;
+    state.angleIncrement = state.angleIncrement === null ? random(0, 2) : state.angleIncrement;
+}
+
+function changeSeed() {
+    state.randSeed = + new Date();
+    state.next = true;
+}
+
+function newRandomValues() {
+    changeSeed();
+    nullBeforeRandomization();
+    randomizeNullValues();
+    state.next = true;
 }
