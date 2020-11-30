@@ -29,14 +29,31 @@ class Node {
 
 class Graph {
     constructor() {
-        this.nodes = [];
-        for (let i = 0; i < 14; i++) {
-            this.nodes.push(new Node(random(0, state.width), random(0, state.height)));
-        }
-        for (let i = 0; i < 20; i++) {
-            const i1 = int(random() * this.nodes.length); 
-            const i2 = int(random() * this.nodes.length); 
-            this.nodes[i1].addNeighbor(this.nodes[i2]);
+        // this code is rather wetwet and could be improved
+        if (typeof state.graph !== "undefined" && typeof state.graph.nodes !== "undefined") {
+            this.nodes = state.graph.nodes;
+            this.nodes = this.nodes.map(n => new Node(n[0], n[1]));
+            for (let i = 0; i < state.graph.edges.length; i++) {
+                const i1 = state.graph.edges[i][0];
+                const i2 = state.graph.edges[i][1];
+                this.nodes[i1].addNeighbor(this.nodes[i2]);
+            }
+        } else {
+            this.nodes = [];
+            for (let i = 0; i < 14; i++) {
+                this.nodes.push(new Node(random(0, state.width), random(0, state.height)));
+            }
+            state.graph = {
+                edges: [],
+                nodes: [],
+            };
+            for (let i = 0; i < 20; i++) {
+                const i1 = int(random() * this.nodes.length); 
+                const i2 = int(random() * this.nodes.length); 
+                this.nodes[i1].addNeighbor(this.nodes[i2]);
+                state.graph.edges.push([i1, i2]);
+            }
+            state.graph.nodes = this.nodes.map(n => [n.x, n.y]);
         }
     }
     draw() {
