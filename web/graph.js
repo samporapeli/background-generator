@@ -21,7 +21,7 @@ class Node {
         circle(this.x, this.y, exp(this.degree()));
         for (let i = 0; i < this.neighbors.length; i++) {
             const neighbor = this.neighbors[i];
-            strokeWeight(this.degree);
+            strokeWeight(this.degree());
             line(this.x, this.y, neighbor.x, neighbor.y);
         }
     }
